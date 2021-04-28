@@ -1,16 +1,14 @@
 %define _disable_rebuild_configure 1
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
-Summary:	GNOME Screensaver
-Name:		gnome-screensaver
-Version:	3.6.1
-Release:	10
+Summary:	BUDGIE Screensaver
+Name:		budgie-screensaver
+Version:	4.0
+Release:	1
 License:	GPLv2+
-Group:		Graphical desktop/GNOME
-Url:		http://www.gnome.org
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-screensaver/%{url_ver}/%{name}-%{version}.tar.xz
-Patch101:	0001-Avoid-SEGV-in-gs_fade_reset.patch
-Patch200:	gnome-desktop335.patch
+Group:		Graphical desktop/Budgie
+Url:		https://github.com/getsolus
+Source0:	https://github.com/getsolus/budgie-screensaver/releases/download/v4.0/budgie-screensaver-v4.0.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -58,8 +56,8 @@ It is designed to support:
 
 %files -f %{name}.lang
 %doc README AUTHORS
-%{_sysconfdir}/pam.d/gnome-screensaver
-%{_sysconfdir}/xdg/autostart/%{name}.desktop
+#{_sysconfdir}/pam.d/gnome-screensaver
+#{_sysconfdir}/xdg/autostart/%{name}.desktop
 %{_bindir}/*
-%{_libexecdir}/gnome-screensaver-dialog
-%{_mandir}/man1/gnome-screensaver*
+#{_libexecdir}/gnome-screensaver-dialog
+#{_mandir}/man1/gnome-screensaver*
