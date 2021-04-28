@@ -8,7 +8,7 @@ Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Budgie
 Url:		https://github.com/getsolus
-Source0:	https://github.com/getsolus/budgie-screensaver/releases/download/v4.0/budgie-screensaver-v4.0.tar.xz
+Source0:	https://github.com/getsolus/budgie-screensaver/releases/download/v%{version}/budgie-screensaver-v%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -40,7 +40,7 @@ It is designed to support:
 * user switching
 
 %prep
-%setup -q
+%setup -q -n %{name}-v%{version}
 %autopatch -p1
 
 %build
