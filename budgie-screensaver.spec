@@ -60,8 +60,9 @@ export CXX=g++
 
 %files -f %{name}.lang
 %doc README AUTHORS
-#{_sysconfdir}/pam.d/gnome-screensaver
-#{_sysconfdir}/xdg/autostart/%{name}.desktop
+%{_sysconfdir}/pam.d/budgie-screensaver
+%{_datadir}/applications/budgie-screensaver.desktop
 %{_bindir}/*
-#{_libexecdir}/gnome-screensaver-dialog
-#{_mandir}/man1/gnome-screensaver*
+%{_libexecdir}/budgie-screensaver-dialog
+%{_mandir}/man1/budgie-screensaver-command.1.*
+%{_mandir}/man1/budgie-screensaver.1.*
