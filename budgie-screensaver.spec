@@ -46,6 +46,8 @@ It is designed to support:
 %autopatch -p1
 
 %build
+export CC=gcc
+export CXX=g++
 %configure \
 	--disable-more-warnings
 
