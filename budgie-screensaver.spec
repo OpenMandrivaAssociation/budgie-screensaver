@@ -9,11 +9,11 @@ License:	GPLv2+
 Group:		Graphical desktop/Budgie
 Url:		https://github.com/getsolus
 Source0:	https://github.com/getsolus/budgie-screensaver/releases/download/v%{version}/budgie-screensaver-v%{version}.tar.xz
-Patch0:		0001-Avoid-SEGV-in-gs_fade_reset.patch
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	pam-devel
+BuildRequires:	xmlto
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(glib-2.0)
@@ -23,6 +23,7 @@ BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libgnomekbdui)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(xscrnsaver)
 BuildRequires:	pkgconfig(xxf86misc)
 BuildRequires:	pkgconfig(xxf86vm)
 BuildRequires:	pkgconfig(xtst)
