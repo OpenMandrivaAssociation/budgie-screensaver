@@ -3,12 +3,12 @@
 
 Summary:	BUDGIE Screensaver
 Name:		budgie-screensaver
-Version:	4.0
+Version:	5.0.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Budgie
-Url:		https://github.com/getsolus
-Source0:	https://github.com/getsolus/budgie-screensaver/releases/download/v%{version}/budgie-screensaver-v%{version}.tar.xz
+Url:		https://github.com/BuddiesOfBudgie/
+Source0:	https://github.com/BuddiesOfBudgie/budgie-screensaver/releases/download/v%{version}/budgie-screensaver-v%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -48,13 +48,12 @@ It is designed to support:
 %build
 export CC=gcc
 export CXX=g++
-%configure \
-	--disable-more-warnings
+%meson
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name}
 
