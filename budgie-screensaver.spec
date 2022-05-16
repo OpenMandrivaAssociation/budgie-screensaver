@@ -10,6 +10,7 @@ Group:		Graphical desktop/Budgie
 Url:		https://github.com/BuddiesOfBudgie/
 Source0:	https://github.com/BuddiesOfBudgie/budgie-screensaver/releases/download/v%{version}/budgie-screensaver-v%{version}.tar.xz
 
+BuildRequires:  meson
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	pam-devel
