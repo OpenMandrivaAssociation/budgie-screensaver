@@ -46,8 +46,8 @@ It is designed to support:
 %autosetup -p1
 
 %build
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %meson
 
 %meson_build
@@ -58,7 +58,7 @@ export CXX=g++
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc README AUTHORS
+%doc README.md AUTHORS
 %{_sysconfdir}/pam.d/budgie-screensaver
 %{_datadir}/applications/budgie-screensaver.desktop
 %{_bindir}/*
