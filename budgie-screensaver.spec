@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig(gnome-desktop-3.0)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libgnomekbdui)
+BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xscrnsaver)
@@ -46,8 +47,6 @@ It is designed to support:
 %autosetup -p1
 
 %build
-#export CC=gcc
-#export CXX=g++
 %meson
 
 %meson_build
