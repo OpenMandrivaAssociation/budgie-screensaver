@@ -3,13 +3,14 @@
 
 Summary:	BUDGIE Screensaver
 Name:		budgie-screensaver
-Version:	4.0
+Version:	5.0.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Budgie
-Url:		https://github.com/getsolus
-Source0:	https://github.com/getsolus/budgie-screensaver/releases/download/v%{version}/budgie-screensaver-v%{version}.tar.xz
+Url:		https://github.com/BuddiesOfBudgie/
+Source0:	https://github.com/BuddiesOfBudgie/budgie-screensaver/releases/download/v%{version}/budgie-screensaver-v%{version}.tar.xz
 
+BuildRequires:  meson
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	pam-devel
@@ -21,6 +22,7 @@ BuildRequires:	pkgconfig(gnome-desktop-3.0)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libgnomekbdui)
+BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xscrnsaver)
@@ -42,24 +44,20 @@ It is designed to support:
 * user switching
 
 %prep
-%setup -q -n %{name}-v%{version}
-%autopatch -p1
+%autosetup -p1
 
 %build
-export CC=gcc
-export CXX=g++
-%configure \
-	--disable-more-warnings
+%meson
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc README AUTHORS
+%doc README.md AUTHORS
 %{_sysconfdir}/pam.d/budgie-screensaver
 %{_datadir}/applications/budgie-screensaver.desktop
 %{_bindir}/*
