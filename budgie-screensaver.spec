@@ -42,8 +42,7 @@ It is designed to support:
 * user switching
 
 %prep
-%setup -q -n %{name}-v%{version}
-%autopatch -p1
+%autosetup -p1
 
 %build
 export CC=gcc
