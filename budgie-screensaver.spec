@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(xscrnsaver)
 BuildRequires:	pkgconfig(xxf86misc)
 BuildRequires:	pkgconfig(xxf86vm)
 BuildRequires:	pkgconfig(xtst)
+BuildRequires:  glibc-static-devel
 
 Requires:	xsltproc
 Requires:	dbus-x11
